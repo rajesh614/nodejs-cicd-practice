@@ -14,7 +14,10 @@ test("GET / returns a success response", async () => {
         assert.equal(response.status, 200);
 
         const data = await response.json();
-        assert.equal(data.message, "Node.js server is running!");
+        assert.equal(
+            data.message,
+            "Node.js server is running! Auto-deployment works!!",
+        );
     } finally {
         await new Promise((resolve, reject) => {
             server.close((err) => (err ? reject(err) : resolve()));
