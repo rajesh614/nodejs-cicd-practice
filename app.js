@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end(
             JSON.stringify({
-                message: "Node.js server is running!",
+                message: "Node.js server is running! Auto-deployment works!!",
             }),
         );
     } else if (req.url === "/users" && req.method === "GET") {
