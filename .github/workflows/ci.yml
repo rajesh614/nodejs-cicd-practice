@@ -30,3 +30,6 @@ jobs:
 
             - name: Run tests
               run: npm test
+
+            - name: Build Docker image
+              run: docker build -t nodejs-cicd-pipeline .
