@@ -1,3 +1,4 @@
+
 name: Node.js CI/CD
 
 on:
@@ -66,3 +67,13 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-cicd-practice:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-cicd-practice:${{ github.sha }}
+
+  deploy:
+    name: Deploy on Mac
+    runs-on: [self-hosted, macOS, ARM64, mac-local-runner]
+    needs: docker
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Deploy latest Docker image
+        run: /Users/rajeshona/tutorials/Practice/nodejs-cicd-practice/deploy-local.sh
