@@ -14,8 +14,8 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.end(
             JSON.stringify([
-                { id: 1, name: "Rahul" },
-                { id: 2, name: "Priya" },
+                { id: 1, name: "Rajesh" },
+                { id: 2, name: "Bhagyashree" },
             ]),
         );
     } else {
