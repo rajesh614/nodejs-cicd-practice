@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
 if (require.main === module) {
     const PORT = process.env.PORT || 8080;
 
-    server.listen(PORT, () => {
+    server.listen(PORT, 0.0.0.0, () => {
         console.log(`Server running at http://localhost:${PORT}`);
     });
 }
